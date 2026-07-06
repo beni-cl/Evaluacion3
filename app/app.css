@@ -1,0 +1,231 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+html,
+body {
+  @apply bg-white dark:bg-gray-950;
+}
+
+body.light {
+  background: linear-gradient(135deg, #fff8f0 0%, #ffe8d6 100%);
+  color: #2f2a2b;
+}
+
+body.dark {
+  background: linear-gradient(135deg, #10111d 0%, #1f2334 100%);
+  color: #f7f7f7;
+}
+
+.app-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid rgba(255, 122, 89, 0.2);
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.1rem;
+  color: #ff5f5f;
+}
+
+header p {
+  margin: 6px 0 0;
+  color: #7d6b6b;
+}
+
+body.dark header p {
+  color: #c7c2d1;
+}
+
+.preferences-panel {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.user-form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.user-form input {
+  padding: 10px 12px;
+  border: 1px solid #d9c3bf;
+  border-radius: 999px;
+  min-width: 180px;
+  font-size: 14px;
+}
+
+.user-form button,
+.theme-toggle,
+.adopt-button {
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.user-form button,
+.theme-toggle {
+  padding: 10px 14px;
+  background: #2f2a2b;
+  color: #fff;
+}
+
+body.dark .user-form button,
+body.dark .theme-toggle {
+  background: #f7f7f7;
+  color: #2f2a2b;
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 122, 89, 0.2);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+  margin-bottom: 24px;
+}
+
+body.dark .hero-card {
+  background: rgba(15, 17, 28, 0.82);
+  border-color: rgba(255, 122, 89, 0.25);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  color: #ff5f5f;
+  font-weight: 700;
+}
+
+.hero-card h2 {
+  margin: 0 0 8px;
+  font-size: 1.55rem;
+}
+
+.hero-card p {
+  margin: 0 0 14px;
+  line-height: 1.5;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #e1c7bb;
+  border-radius: 999px;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+.pets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.pet-card {
+  border-radius: 22px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 122, 89, 0.18);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.08);
+}
+
+body.dark .pet-card {
+  background: rgba(12, 15, 24, 0.95);
+}
+
+.image-container {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffe7d4 0%, #ffdbd1 100%);
+}
+
+.pet-image {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+}
+
+.pet-info {
+  padding: 16px 18px 20px;
+}
+
+.pet-badge {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #ffefea;
+  color: #c3523f;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.pet-info h3 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  text-transform: capitalize;
+}
+
+.pet-info p {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.pet-stats {
+  padding: 0;
+  margin: 10px 0 0;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+}
+
+.adopt-button {
+  width: 100%;
+  margin-top: 14px;
+  padding: 10px 12px;
+  background: linear-gradient(135deg, #ff5f5f 0%, #ff7a59 100%);
+  color: white;
+}
+
+.adopt-button:hover {
+  filter: brightness(0.95);
+}
+
+.status,
+.no-results {
+  text-align: center;
+  padding: 30px 10px;
+  font-size: 1rem;
+}
+
+.status.error {
+  color: #c94242;
+}
